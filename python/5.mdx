@@ -1,0 +1,109 @@
+In Python, a dictionary is a collection of key-value pairs. You can use dictionaries to store data in a more organized way than with lists.
+
+## Creating Dictionaries
+
+To create a dictionary, use curly braces **`{}`** and include a comma-separated list of key-value pairs. The key and value are separated by a colon **`:`**.
+
+For example:
+
+```python
+# Create a dictionary of names and ages
+people = {
+    "Alice": 30,
+    "Bob": 35,
+    "Charlie": 25
+}
+
+# Create a dictionary of phone numbers
+phones = {
+    "Alice": "555-1234",
+    "Bob": "555-2345",
+    "Charlie": "555-3456"
+}
+
+```
+
+You can also create an empty dictionary and add key-value pairs later using the syntax **`dictionary[key] = value`**.
+
+```python
+# Create an empty dictionary
+empty = {}
+
+# Add a key-value pair
+empty["Alice"] = 30
+empty["Bob"] = 35
+empty["Charlie"] = 25
+
+```
+
+### **Accessing Dictionary Values**
+
+To access the value of a key in a dictionary, use the syntax **`dictionary[key]`**. For example:
+
+```python
+# Get Alice's age
+age = people["Alice"]
+print(age)  # Output: 30
+
+# Get Bob's phone number
+phone = phones["Bob"]
+print(phone)  # Output: "555-2345"
+
+```
+
+If you try to access a key that does not exist in the dictionary, you will get a **`KeyError`**. You can use the **`in`** keyword to check if a key is in a dictionary before accessing it.
+
+```python
+# Check if "Alice" is in the dictionary
+if "Alice" in people:
+    # Get Alice's age
+    age = people["Alice"]
+    print(age)  # Output: 30
+
+# Check if "Dave" is in the dictionary
+if "Dave" in people:
+    # This code will not be executed because "Dave" is not in the dictionary
+    age = people["Dave"]
+    print(age)
+
+```
+
+### **Modifying Dictionary Values**
+
+To modify the value of a key in a dictionary, use the syntax **`dictionary[key] = value`**. For example:
+
+```python
+# Set Alice's age to 31
+people["Alice"] = 31
+
+# Set Bob's phone number to "555-9876"
+phones["Bob"] = "555-9876"
+
+```
+
+### **Removing Key-Value Pairs**
+
+To remove a key-value pair from a dictionary, use the **`del`** keyword. For example:
+
+```python
+# Remove Alice's age from the dictionary
+del people["Alice"]
+
+# Remove Bob's phone number from the dictionary
+del phones["Bob"]
+
+```
+
+### **Iterating Over Dictionaries**
+
+You can use a **`for`** loop to iterate over the keys in a dictionary. For example:
+
+```python
+# Print the names of all people in the dictionary
+for name in people:
+    print(name)  # Output: "Bob", "Charlie"
+
+# Print the phone numbers of all people in the dictionary
+for name in
+
+```

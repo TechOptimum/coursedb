@@ -1,0 +1,106 @@
+# Student Gradebook
+
+1. Store the names and grades of a fixed number of students (e.g., 5). You can store the data in variables, lists, or a dictionary.
+2. Prompt the user to enter a student name and a grade (e.g., "John Smith", 85).
+3. Check if the student is in the gradebook. If they are, update their grade. If they are not, add them to the gradebook.
+4. Calculate the average grade for all students.a
+5. Print the name and grade of the student with the highest grade.
+6. Print the names and grades of all students sorted by name (ascending).
+7. Prompt the user to enter a letter grade (e.g., "A", "B", "C").
+8. Print the names and grades of all students with grades that match the letter grade.
+
+## **Tips**
+
+- You can use the **`input()`** function to prompt the user for input.
+- You can use the **`if`** and **`elif`** statements to check the letter grade.
+- You can use the **`sorted()`** function to sort a list of students by name.
+- You can use the **`format()`** method to print the name and grade of a student.
+- ANSWER KEY
+    
+    ```python
+    # Define a list to store the students and their grades
+    gradebook = []
+    
+    # Define a function to add a student to the gradebook
+    def add_student(name, grade):
+        # Check if the student is already in the gradebook
+        for student in gradebook:
+            if student["name"] == name:
+                # Update the student's grade
+                student["grade"] = grade
+                return
+        # If the student is not in the gradebook, add them
+        gradebook.append({"name": name, "grade": grade})
+    
+    # Define a function to calculate the average grade
+    def average_grade():
+        total = 0
+        count = 0
+        for student in gradebook:
+            total += student["grade"]
+            count += 1
+        return total / count
+    
+    # Define a function to print the student with the highest grade
+    def print_highest_grade():
+        highest_grade = 0
+        highest_student = ""
+        for student in gradebook:
+            if student["grade"] > highest_grade:
+                highest_grade = student["grade"]
+                highest_student = student["name"]
+        print("Highest grade: {} ({})".format(highest_student, highest_grade))
+    
+    # Define a function to sort the gradebook by name
+    def sort_gradebook():
+        gradebook.sort(key=lambda x: x["name"])
+    
+    # Define a function to print the gradebook
+    def print_gradebook():
+        for student in gradebook:
+            print("{}: {}".format(student["name"], student["grade"]))
+    
+    # Define a function to find students by letter grade
+    def find_by_letter_grade(letter_grade):
+        for student in gradebook:
+            # Calculate the student's letter grade
+            if 90 <= student["grade"] <= 100:
+                letter = "A"
+            elif 80 <= student["grade"] < 90:
+                letter = "B"
+            elif 70 <= student["grade"] < 80:
+                letter = "C"
+            elif 60 <= student["grade"] < 70:
+                letter = "D"
+            else:
+                letter = "F"
+            # Print the student's name and grade if they match the search criteria
+            if letter == letter_grade:
+                print("{}: {} ({})".format(student["name"], student["grade"], letter))
+    
+    # Prompt the user to enter a student name and grade
+    name = input("Enter student name: ")
+    grade = int(input("Enter student grade: "))
+    
+    # Add the student to the gradebook
+    add_student(name, grade)
+    
+    # Calculate the average grade
+    avg = average_grade()
+    print("Average grade: {}".format(avg))
+    
+    # Print the student with the highest grade
+    print_highest_grade()
+    
+    # Sort the gradebook by name
+    sort_gradebook()
+    
+    # Print the gradebook
+    print_gradebook()
+    
+    # Prompt the user to enter a letter grade
+    letter_grade = input("Enter letter grade: ")
+    
+    # Find students by letter grade
+    find_by_letter_grade(letter_grade)
+    ```
